@@ -1,21 +1,21 @@
 class Imc 
 {
-    height;
-    weigth;
+    #height;
+    #weigth;
     setHeight (height)
     {
-        this.height = Number(height);
+        this.#height = Number(height);
         console.log("setHeight", height);
     }
     setWeigth (weigth)
     {
-        this.weigth = Number(weigth);
+        this.#weigth = Number(weigth);
         console.log("setWeigth", weigth);
     }
     getImc ()
     {
-        const r = this.weigth / (this.height*this.height);
-        console.log(`result: ${this.weigth} / ${this.height}² = ${r}`);
+        const r = this.#weigth / Math.pow(this.#height, 2);
+        console.log(`result: ${this.#weigth} / ${this.#height}² = ${r}`);
         return r;
     }
 }
