@@ -1,27 +1,27 @@
 export default class AscII 
 {
-    string;
-    code;
+    #string;
+    #code;
     
     constructor (string)
     {
         this.string = string;
     }
 
-    #getArray (string)
+    set string (string) 
     {
+        this.#string = string;
         const array = [];
         for(let i = 0; i < string.length; i++){
             let code = string.charCodeAt(i);
             array.push(code);
         }
-        return array;
+        this.#code = array;
     }
 
     getCode()
     {
-        this.code = this.#getArray(this.string);
-        return this.code.reduce((prev, curr) => 
+        return this.#code.reduce((prev, curr) => 
         {
             prev += curr;
             return prev;

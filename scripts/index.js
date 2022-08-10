@@ -4,11 +4,12 @@ const inputSend = document.getElementById("fullname");
 const buttonSend = document.getElementById("send-fullname");
 const result = document.getElementById("result");
 const link = document.getElementById("link");
+const ascii = new AscII();
 
 async function sendFullname ()
 {
     const fullname = inputSend.value;
-    const ascii = new AscII(fullname);
+    ascii.string = fullname;
     const code = ascii.getCode();
     const resp = await fetch(`http://ubuntu.alphaedtech.org.br:8080/?string=${fullname}&code=${code}`)
     .then(res => res.json())
